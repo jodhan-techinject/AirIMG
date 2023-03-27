@@ -31,7 +31,7 @@ const RenderCards = ({ data, title }) => {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-          },
+          }
         });
   
         if (response.ok) {
