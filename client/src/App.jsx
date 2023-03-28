@@ -24,13 +24,13 @@ const App = () => {
           <a
             href="https://github.com/Jodhansajifab"
             target="_blank"
-            className="font-inter font-medium bg-[#484bb2] text-white px-4 py-2 rounded-md"
+            className="font-inter font-medium bg-[#e48a45] text-white px-4 py-2 rounded-md"
           >
             Github
           </a>
         </div>
       </header>
-      <main className="sm:p-8 px-4 py-8 w-full bg-[#e7e9f3] min-h-[calc(100vh-73px)]">
+      <main className="sm:p-8 px-4 py-8 w-full bg-[#f5f5f7] min-h-[calc(100vh-73px)]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create-post" element={<CreatePost />} />
