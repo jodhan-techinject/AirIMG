@@ -38,7 +38,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setgeneratingImg(true);
-        const response = await fetch('https://airimg.onrender.com/api/v1/dalle', {
+        const response = await fetch('http://localhost:8080/api/v1/stable-diffusion', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const CreatePost = () => {
         });
 
         const data = await response.json();
-        setform({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+        setform({ ...form, photo: data.imageUrl });
       } catch (err) {
         alert(err);
       } finally {
@@ -66,7 +66,7 @@ const CreatePost = () => {
     if(form.prompt && form.photo){
       setloading(true);
       try {
-        const response = await fetch('https://airimg.onrender.com/v1/post',{
+        const response = await fetch('http://localhost:8080/api/v1/post',{
           method : 'POST',
           headers: {
             'Content-Type': 'application/json',

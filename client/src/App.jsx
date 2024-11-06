@@ -22,7 +22,7 @@ const App = () => {
           </Link>
 
           <a
-            href="https://github.com/Jodhansajifab"
+            href="https://github.com/jodhan-techinject"
             target="_blank"
             className="font-inter font-medium bg-[#e48a45] text-white px-4 py-2 rounded-md"
           >
