@@ -28,6 +28,7 @@ const Home = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        mode: 'no-cors',
       });
 
       if (response.ok) {
