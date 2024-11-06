@@ -6,13 +6,8 @@ dotenv.config();
 
 const router = express.Router();
 
-router.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    next();
-});
 
-router.post('/stable-diffusion', async (req, res) => {
+router.post('/', async (req, res) => {
     const { prompt, negative_prompt = "bad quality", width = 512, height = 512 } = req.body;
 
     const options = {
@@ -39,6 +34,11 @@ router.post('/stable-diffusion', async (req, res) => {
     try {
         const response = await axios(options);
         const imageUrl = response.data.output[0];
+
+        // Set CORS headers for the response
+        res.set('Access-Control-Allow-Origin', '*');
+        res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+        res.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
         // Send back the URL of the generated image
         res.status(200).json({ imageUrl });

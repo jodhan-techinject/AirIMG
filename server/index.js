@@ -9,7 +9,16 @@ import stableDiffusion from './routes/stableDiffusion.js'
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+// CORS configuration: Allow all origins (or specify your frontend URL later)
+const corsOptions = {
+  origin: '*',  // Allow all origins temporarily (replace with specific domain in production)
+  methods: ['GET', 'POST', 'OPTIONS'],  // Allow methods including OPTIONS for preflight
+  allowedHeaders: ['Content-Type', 'Authorization']  // Allowed headers
+};
+
+// Apply CORS globally to all routes
+app.use(cors(corsOptions));
 
 app.use(express.json({ limit: "50mb" }));
 
