@@ -6,12 +6,11 @@ dotenv.config();
 
 const router = express.Router();
 
-// router.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', '*'); // Allow all origins
-//     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Allow GET, POST, and OPTIONS
-//     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Allow specific headers
-//     next();
-// });
+router.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    next();
+});
 
 router.post('/stable-diffusion', async (req, res) => {
     const { prompt, negative_prompt = "bad quality", width = 512, height = 512 } = req.body;
@@ -21,7 +20,6 @@ router.post('/stable-diffusion', async (req, res) => {
         url: 'https://modelslab.com/api/v6/realtime/text2img',
         headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
         },
         data: {
             key: process.env.STABLE_DIFFUSION_API_KEY,
