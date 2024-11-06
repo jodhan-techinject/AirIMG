@@ -13,8 +13,17 @@ app.use(cors());
 
 app.use(express.json({ limit: "50mb" }));
 
-app.use('/api/v1/post',postRoutes)
-app.use('/api/v1/stable-diffusion',stableDiffusion)
+app.use('/api/v1/post',cors({
+  origin: 'https://air-img.vercel.app/',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}),postRoutes)
+
+app.use('/api/v1/stable-diffusion',cors({
+  origin: 'https://air-img.vercel.app/',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}),stableDiffusion)
 
 app.get("/", async (req, res) => {
   res.send("hello from AIRimg");
