@@ -38,7 +38,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setgeneratingImg(true);
-        const response = await fetch('https://air-img-server-3agoy4vzo-jodhansajifabs-projects.vercel.app/api/v1/stable-diffusion', {
+        const response = await fetch('https://airimg.onrender.com/api/v1/stable-diffusion', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ const CreatePost = () => {
     if(form.prompt && form.photo){
       setloading(true);
       try {
-        const response = await fetch('https://air-img-server-3agoy4vzo-jodhansajifabs-projects.vercel.app/api/v1/post',{
+        const response = await fetch('https://airimg.onrender.com/api/v1/post',{
           method : 'POST',
           headers: {
             'Content-Type': 'application/json',

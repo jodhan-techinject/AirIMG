@@ -23,7 +23,7 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://air-img-server-3agoy4vzo-jodhansajifabs-projects.vercel.app/api/v1/post", {
+      const response = await fetch("https://airimg.onrender.com/api/v1/post", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
