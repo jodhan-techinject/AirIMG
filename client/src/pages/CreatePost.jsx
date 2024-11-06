@@ -46,7 +46,6 @@ const CreatePost = () => {
           body: JSON.stringify({
             prompt: form.prompt,
           }),
-          mode: 'no-cors',
         });
 
         const data = await response.json();
@@ -72,8 +71,7 @@ const CreatePost = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(form),
-          mode: 'no-cors',
+          body: JSON.stringify(form)
         });
 
         await response.json();
