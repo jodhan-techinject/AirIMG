@@ -1,10 +1,17 @@
 import express from "express";
 import axios from "axios";
 import * as dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 const router = express.Router();
+
+router.use(cors({
+    origin: 'https://air-img.vercel.app',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 router.post('/', async (req, res) => {
     const { prompt, negative_prompt = "bad quality", width = 512, height = 512 } = req.body;
