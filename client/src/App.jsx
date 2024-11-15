@@ -11,7 +11,7 @@ const App = () => {
                 <Link to="/">
                     <div className='flex items-center gap-1 text-primary-100'>
                         <img src='/images/logo1.png' alt="logo" className="w-20 h-10 object-contain"/>
-                        <p className='text-xl font-bebas md:text-2xl'>AIR-IMG</p>
+                        <p className='text-xl font-bebas md:text-3xl pt-1 tracking-wide'>AIR-IMG</p>
                     </div>
                 </Link>
 
