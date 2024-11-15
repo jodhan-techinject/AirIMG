@@ -9,9 +9,9 @@ const App = () => {
             <header
                 className="w-full flex justify-between items-center bg-primary-400 sm:px-8 px-4 py-4 border-b border-b-[#e0e7f4]">
                 <Link to="/">
-                    <div className='flex items-center gap-4 text-primary-100'>
-                        <img src='./assets/logo1.png' alt="logo" className="w-30 h-12 object-contain"/>
-                        <p>AIR-IMG</p>
+                    <div className='flex items-center gap-1 text-primary-100'>
+                        <img src='/images/logo1.png' alt="logo" className="w-20 h-10 object-contain"/>
+                        <p className='text-xl font-bebas md:text-2xl'>AIR-IMG</p>
                     </div>
                 </Link>
 
