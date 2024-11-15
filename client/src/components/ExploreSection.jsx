@@ -3,6 +3,7 @@ import {useState, useEffect} from "react";
 import Card from "../components/Card.jsx";
 import Formfield from "../components/Formfield.jsx";
 import Loader from "../components/loader.jsx";
+import {toast} from "react-toastify";
 
 const RenderCards = ({data, title}) => {
     if (data?.length > 0) {
@@ -38,6 +39,7 @@ const ExploreSection = () => {
             }
         } catch (err) {
             console.log(err);
+            toast(err);
         } finally {
             setLoading(false);
         }

@@ -3,6 +3,7 @@ import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import CreatePost from "./pages/CreatePost.jsx";
 import {Button} from "./components/Button.jsx";
+import {NotifyToastContainer} from "./components/NotifyToastContainer.jsx";
 
 const App = () => {
     return (
@@ -43,6 +44,7 @@ const App = () => {
                     <Route path="/create-post" element={<CreatePost/>}/>
                 </Routes>
             </main>
+            <NotifyToastContainer/>
         </BrowserRouter>
     );
 };

@@ -36,7 +36,6 @@ export function HomeBanner() {
                     >
                         <Button text={'Start Generating'} customClass={'w-[20rem] pl-5'}/>
                     </Link>
-
                 </div>
             </div>
         </div>

@@ -3,7 +3,6 @@ import {HomeBanner} from "../components/HomeBanner.jsx";
 import ExploreSection from "../components/ExploreSection.jsx";
 
 const Home = () => {
-
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
     useEffect(() => {
