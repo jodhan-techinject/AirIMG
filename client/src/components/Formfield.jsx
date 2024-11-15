@@ -50,7 +50,7 @@ const Formfield = ({
                     </div>
                     <input
                         required=""
-                        className="block w-full p-2 ps-10 text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focuborder-primary-50 outline-none focus:border-primary-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focuborder-primary-50 font-poppins dark:focus:border-primary-50 placeholder:text-sm"
+                        className="block w-full p-2 ps-10 text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focuborder-primary-50 outline-none focus:border-primary-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focuborder-primary-50 font-poppins dark:focus:border-primary-50 placeholder:text-base"
                         type="search"
                         id={name}
                         name={name}
