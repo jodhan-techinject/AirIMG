@@ -2,7 +2,7 @@ import React from 'react';
 import {downloadImage} from "../utils/utils.js";
 
 const Card = ({_id, name, prompt, photo}) => (
-    <div className="rounded-xl group relative shadow-card hover:shadow-cardhover card">
+    <div className="rounded-xl group relative hover:scale-105 transition-all duration-300 ease-in-out card">
         <img
             className="w-full h-auto object-cover rounded-xl"
             src={photo}

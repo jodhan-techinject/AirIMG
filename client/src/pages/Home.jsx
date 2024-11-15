@@ -86,7 +86,7 @@ const Home = () => {
           labelName="Search posts"
           type="text"
           name="text"
-          placeholder="Search something..."
+          placeholder="Search prompt or user name..."
           value={searchText}
           handleChange={handleSearchChange}
         />
@@ -105,7 +105,7 @@ const Home = () => {
                 <span className="text-[#222328]">{searchText}</span>:
               </h2>
             )}
-            <div className="grid lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
+            <div className="grid lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-10">
               {searchText ? (
                 <RenderCards
                   data={searchedResults}

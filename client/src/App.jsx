@@ -26,13 +26,15 @@ const App = () => {
                     <a
                         href="https://github.com/jodhan-techinject"
                         target="_blank"
-                        className="font-inter font-medium bg-[#e48a45] text-white px-4 py-2 rounded-md"
+                        className="flex justify-center items-center px-3 font-bold h-[3rem] bg-primary-50 font-poppins text-white rounded-md"
                     >
-                        Github
+                        <p>
+                            Github
+                        </p>
                     </a>
                 </div>
             </header>
-            <main className="sm:p-8 px-4 py-8 w-full bg-primary-400 min-h-[calc(100vh-73px)]">
+            <main className="sm:p-8 px-4 py-8 w-full bg-primary-400 min-h-[calc(100vh-80px)]">
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/create-post" element={<CreatePost/>}/>
