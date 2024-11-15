@@ -8,7 +8,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <header
-                className="w-full flex justify-between items-center bg-black  sm:px-8 px-4 py-4">
+                className=" w-full flex justify-between items-center bg-black  sm:px-8 px-4 py-4 border-b border-gray-800">
                 <Link to="/">
                     <div className='flex items-center gap-1 text-primary-100'>
                         <img src='/images/logo1.png' alt="logo" className="w-20 h-10 object-contain"/>
