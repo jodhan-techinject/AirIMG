@@ -35,17 +35,24 @@ const Home = () => {
         setAllPosts(result.data.reverse());
       }
     } catch (err) {
-      alert(err);
+      console.log(err);
     } finally {
       setLoading(false);
     }
   };
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
+    useEffect(() => {
+        async function fetchPostsData() {
+            try {
+                await fetchPosts();
+            } catch (error) {
+                console.error("Failed to fetch posts:", error);
+            }
+        }
+        fetchPostsData();
+    }, []);
 
-  const handleSearchChange = (e) => {
+    const handleSearchChange = (e) => {
     clearTimeout(searchTimeout);
     setSearchText(e.target.value);
 
