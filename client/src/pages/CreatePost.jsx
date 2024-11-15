@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { preview } from "../assets";
-import { getRandomPrompt } from "../utils";
-import { Formfield, Loader } from "../components";
+import {getRandomPrompt} from "../utils/utils.js";
+import Formfield from "../components/Formfield.jsx";
+import Loader from "../components/loader.jsx";
 
 const CreatePost = () => {
   const nagivate = useNavigate();
@@ -119,13 +118,13 @@ const CreatePost = () => {
         />
         <div className="relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
           {form.photo? (
-            <img 
+            <img
               src={form.photo}
               alt={form.prompt}
               className="w-full h-full object-contain"/>
           ):(
-            <img 
-              src={preview}
+            <img
+              src='/images/preview.png'
               alt="preview"
               className="w-9/12 h-9/12 object-contain opacity-60"/>
           )}
@@ -158,7 +157,7 @@ const CreatePost = () => {
         </button>
       </div>
       </form>
-      
+
   </section>;
 };
 

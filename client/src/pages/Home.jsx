@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Card, Formfield, Loader } from "../components";
+import Card from "../components/Card.jsx";
+import Formfield from "../components/Formfield.jsx";
+import Loader from "../components/loader.jsx";
 
 const RenderCards = ({ data, title }) => {
   if (data?.length > 0) {
