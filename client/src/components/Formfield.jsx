@@ -6,7 +6,7 @@ const Formfield = ({
                        placeholder,
                        value,
                        handleChange,
-                       isSupriseMe,
+                       isSurpriseMe,
                        handleSupriseMe,
                    }) => {
 
@@ -18,7 +18,7 @@ const Formfield = ({
                     {LabelName}
                 </label>
 
-                {isSupriseMe && (
+                {isSurpriseMe && (
                     <button type="button" onClick={handleSupriseMe}
                             className="font-semibold text-xs bg-[#ECECF1] py-1 px-2 rounded-[5px] text-black">
                         Suprise Me
