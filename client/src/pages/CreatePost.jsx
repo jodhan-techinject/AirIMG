@@ -39,8 +39,9 @@ const CreatePost = () => {
         if (form.prompt) {
             try {
                 setgeneratingImg(true);
-                // const response = await fetch('https://airimg.onrender.com/api/v1/stable-diffusion', {
-                const response = await fetch('http://localhost:8080/api/v1/stable-diffusion', {
+                const response = await fetch('https://airimg.onrender.com/api/v1/stable-diffusion', {
+                // const response = await fetch('https://airimg-production.up.railway.app/api/v1/stable-diffusion', {
+                // const response = await fetch('http://localhost:8080/api/v1/stable-diffusion', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -73,6 +74,7 @@ const CreatePost = () => {
             setloading(true);
             try {
                 const response = await fetch('https://airimg.onrender.com/api/v1/post', {
+                // const response = await fetch('https://airimg-production.up.railway.app/api/v1/post', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -131,7 +133,7 @@ const CreatePost = () => {
                         <img
                             src={form.photo}
                             alt={form.prompt}
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-cover"
                         />
                     ) : (
                         generatingImg ? (
