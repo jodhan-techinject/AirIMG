@@ -1,47 +1,44 @@
 import express from "express";
-import axios from "axios";
 import * as dotenv from "dotenv";
 
 dotenv.config();
 
 const router = express.Router();
 
-
 router.post('/', async (req, res) => {
-    const { prompt, negative_prompt = "bad quality", width = 512, height = 512 } = req.body;
+    const { prompt } = req.body;
 
-    const options = {
-        method: 'POST',
-        url: 'https://modelslab.com/api/v6/realtime/text2img',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        data: {
-            key: process.env.STABLE_DIFFUSION_API_KEY,
-            prompt,
-            negative_prompt,
-            width,
-            height,
-            safety_checker: false,
-            seed: null,
-            samples: 1,
-            base64: false,
-            webhook: null,
-            track_id: null
-        }
+    const data = {
+        inputs: prompt,
     };
 
     try {
-        const response = await axios(options);
-        const imageUrl = response.data.output[0];
+        // Call Hugging Face API
+        const response = await fetch("https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev", {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${process.env.HUGGING_FACE_API_KEY}`,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
 
-        // Set CORS headers for the response
-        res.set('Access-Control-Allow-Origin', '*');
-        res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-        res.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+        if (!response.ok) {
+            throw new Error(`API error: ${response.statusText}`);
+        }
 
-        // Send back the URL of the generated image
-        res.status(200).json({ imageUrl });
+        // Convert response to arrayBuffer (for binary data)
+        const arrayBuffer = await response.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+
+        // Optionally: convert to base64 string
+        const base64Image = buffer.toString('base64');
+
+        // Optionally: send back the base64 image
+        res.status(200).json({
+            imageUrl: `data:image/png;base64,${base64Image}`,
+        });
+
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: error.message || "Image generation failed" });
