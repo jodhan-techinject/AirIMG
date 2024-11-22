@@ -21,7 +21,7 @@ const App = () => {
                     <Link
                         to="/create-post"
                     >
-                        <Button text={'Create'} customClass={'w-[5rem] md:w-[10rem] h-[3rem]'}/>
+                        <Button text={'Create'} customClass={'w-[6rem] md:w-[12rem] h-[3rem]'}/>
                     </Link>
 
                     <a
